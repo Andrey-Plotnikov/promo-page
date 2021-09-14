@@ -120,10 +120,10 @@ export default {
           })
           .catch((error) => {
             console.error("There was an error!", error);
-            
+
             this.status.isError = true;
             this.status.content =
-              'Не удалось отправить вашу заявку. Попробуйте позднее.';
+              "Не удалось отправить вашу заявку. Попробуйте позднее.";
           });
       }
     },
