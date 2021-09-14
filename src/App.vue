@@ -1,28 +1,15 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div id="app" :class="{ opened: this.$isNavOpened }">
+    <app-nav :class="{ opened: this.$isNavOpened }" />
+    <app-header />
+    <app-main />
+    <app-footer />
+
+    <transition name="fade">
+      <order-card-modal v-show="$isModalOpened" />
+    </transition>
   </div>
 </template>
 
-<script>
-import HelloWorld from "./components/HelloWorld.vue";
-
-export default {
-  name: "App",
-  components: {
-    HelloWorld,
-  },
-};
-</script>
-
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<script src="@/assets/js/App.js"></script>
+<style lang="less" src="@/assets/css/App.less"></style>

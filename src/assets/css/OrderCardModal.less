@@ -1,0 +1,266 @@
+@import '~@/assets/css/params.less';
+
+.agree-toggler {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+
+input[type=checkbox] {
+  display: none;
+
+  + label {
+    display: flex;
+    align-items: center;
+    p {
+      display: inline;
+      font-size: 16px;
+      font-weight: 500;
+      margin-left: 20px;
+      user-select: none;
+      -ms-user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+    }
+    &::before {
+      display: inline-block;
+      content: '';
+      background-color: @selector-bg-color;
+      min-width: 40px;
+      min-height: 40px;
+      border-radius: 10px;
+    }
+    + .checked {
+      position: absolute;
+      top: 6px;
+      left: 15px;
+      display: none;
+      &::after {
+        border-color: #FFFFFF;
+      }
+    }
+  }
+
+  &:checked {
+    + label {
+      + .checked {
+        display: inline-table;
+      }
+    }
+  }
+}
+
+
+
+.arrow {
+  display: inline-block;
+  position: absolute;
+  top: 30px;
+  right: 25px;
+
+  transition: transform 0.5s;
+
+  @media (max-width: @max-mobile-width) {
+    
+  }
+
+  &::after {
+    content: '';
+    display: block;
+ 
+    width: 12px;
+    height: 12px;
+ 
+    border: solid #FFFFFF;
+    border-width: 0 4px 4px 0;
+ 
+    transform: rotate(45deg);
+  }
+}
+
+.checked {
+  display: inline-block;
+  position: absolute;
+  top: 20px;
+  right: -25px;
+
+  @media (max-width: @max-mobile-width) {
+    right: 20px;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+ 
+    width: 12px;
+    height: 24px;
+ 
+    border: solid #89cc1c;
+    border-width: 0 4px 4px 0;
+ 
+    transform: rotate(45deg);
+  }
+}
+
+.error {
+  color: @error-color;
+  font-weight: 500;
+  margin: 5px 15px 0 15px;
+}
+
+.input-wrapper {
+  text-align: left;
+  margin-bottom: 20px;
+  position: relative;
+  input {
+    width: 100%;
+    height: 80px;
+    padding: 20px 15px 0 15px;
+    &:placeholder-shown+label {
+      top: 30px;
+      font-size: 20px;
+    }
+    &:not(placeholder-shown)+label, &:focus+label {
+      top: 15px;
+      font-size: 12px;
+    }
+  }
+  label {
+    transition: 0.3s;
+    height: 0;
+    display: block;
+    font-weight: 500;
+    position: absolute;
+    font-size: 20px;
+    left: 15px;
+    top: 30px;
+    color: @dark-grey-color;
+    &:hover {
+      cursor: pointer;
+    } 
+  }
+}
+
+.citizenship-picker {
+  position: relative;
+
+  input {
+    &:hover {
+      background-color: @selector-bg-color;
+      cursor: pointer;
+    }
+    &:focus {
+      ~ .citizenship-picker-list {
+        display: block;
+      }
+      ~ .arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .citizenship-picker-list {
+    z-index: 80;
+    transition: 1s;
+    display: none;
+    background-color: @selector-bg-color;
+    border-radius: 15px;
+    position: absolute;
+    top: 85px;
+    width: 680px;
+    padding: 15px 0;
+    &:hover {
+      display: block;
+    }
+
+    @media (max-width: @max-mobile-width) {
+      padding: 5vw;
+      width: 90vw;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        color: @text-color;
+        font-weight: 500;
+        font-size: 20px;
+        padding: 15px;
+
+        &:hover {
+          cursor: pointer;
+          background-color: @gold-color;
+        }
+      }
+    }
+  }
+}
+
+.modal-wrapper {
+  transition: 1s;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: @bg-color;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  width: 680px;
+  button {
+    width: 40%;
+  }
+
+  @media (max-width: @max-mobile-width) {
+    overflow-y: scroll;
+    height: 100%;
+    padding: 5vw;
+    button {
+      width: 100%;
+    }
+  }
+}
+
+.title {
+  position: relative;
+  > a {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.control-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.close {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 32px;
+  width: 2px;
+  background-color: @dark-grey-color;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}

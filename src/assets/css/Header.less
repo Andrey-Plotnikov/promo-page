@@ -1,0 +1,98 @@
+@import '~@/assets/css/params.less';
+
+header {
+  padding-top: 50px;
+  margin-bottom: 50px;
+
+  @media (max-width: @max-mobile-width) {
+    position: fixed;
+    margin-bottom: 0;
+    z-index: 20;
+    background-color: @bg-color;
+    height: 60px;
+    padding-top: 0;
+  }
+}
+
+section {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+
+  @media (max-width: @max-mobile-width) {
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 10px 5vw;
+  }
+}
+
+.logo {
+  min-width: 0;
+
+  @media (max-width: @max-mobile-width) {
+    display: block;
+    width: 100%;
+  }
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  height: @header-height;
+}
+
+.nav-toggle {
+  position: relative;
+  flex-basis: (@long-width - @short-width) / 2;
+  width: 30px;
+  height: 19px;
+  box-sizing: content-box;
+
+  @media (max-width: @max-mobile-width) {
+    flex-basis: auto;
+    margin-left: 10px;
+  }
+
+  &:hover, &.opened {
+    cursor: pointer;
+    span {
+      transform-origin: center;
+      &:nth-child(1) {
+        top: 9px;
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        top: 9px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  span {
+    transition: opacity 0.3s, transform 0.3s;
+    display: block;
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: 30px;
+    background-color: @gold-color;
+    &:nth-child(1) {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 8px;
+      width: 25px;
+    }
+    &:nth-child(3) {
+      top: 16px;
+    }
+  }
+}
+
+@media (max-width: @max-mobile-width) {
+  .header-content {
+    height: @mob-header-height;
+  }
+}
