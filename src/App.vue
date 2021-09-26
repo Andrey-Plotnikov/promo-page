@@ -4,12 +4,12 @@
     <app-header />
     <app-main />
     <app-footer />
-
-    <transition name="fade">
-      <order-card-modal v-show="$isModalOpened" />
-    </transition>
+    
+    <modal title="Заявка на карту" ref="orderCardModal">
+      <order-card-modal></order-card-modal>
+    </modal>
   </div>
 </template>
 
-<script src="@/assets/js/App.js"></script>
-<style lang="less" src="@/assets/css/App.less"></style>
+<script src="@/App.js"></script>
+<style lang="less" src="@/App.less"></style>

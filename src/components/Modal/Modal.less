@@ -1,0 +1,65 @@
+@import "~@css/params.less";
+
+.modal-wrapper {
+  transition: 1s;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: @bg-color;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__header {
+    position: relative;
+    text-align: center;
+  
+    @media (max-width: @max-mobile-width) {
+      width: 100%;
+    }
+  }
+
+  &__closer {
+    position: absolute;
+  }
+}
+
+.modal-content {
+  width: 680px;
+
+  @media (max-width: @max-mobile-width) {
+    width: 100vw;
+    overflow-y: scroll;
+    max-height: 100vh;
+    padding: 10px;
+  }
+}
+
+
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+}
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 32px;
+  width: 2px;
+  background-color: @dark-grey-color;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}

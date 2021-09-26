@@ -1,8 +1,8 @@
 export default {
   name: "AppMain",
   methods: {
-    openCardOrderModal: function () {
-      this.$isModalOpened = true;
+    openCardOrderModal: function() {
+      this.$parent.$refs.orderCardModal.isOpened = true;
     },
   },
   mounted() {
