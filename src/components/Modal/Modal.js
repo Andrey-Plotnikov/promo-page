@@ -2,15 +2,15 @@ export default {
   name: "Modal",
   data: () => {
     return {
-      isOpened: false
-    }
+      isOpened: false,
+    };
   },
   props: {
-    'title': String
+    title: String,
   },
   methods: {
-    closeOpenCardModal: function() {
+    closeOpenCardModal: function () {
       this.isOpened = false;
-    }
-  }
-}
+    },
+  },
+};

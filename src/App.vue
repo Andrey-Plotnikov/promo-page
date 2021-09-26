@@ -4,7 +4,7 @@
     <app-header />
     <app-main />
     <app-footer />
-    
+
     <modal title="Заявка на карту" ref="orderCardModal">
       <order-card-modal></order-card-modal>
     </modal>

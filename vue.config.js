@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   lintOnSave: false,
@@ -6,11 +6,11 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        '@c': path.join(__dirname, 'src/components'),
-        '@css': path.join(__dirname, 'src/assets/css'),
-        '@img': path.join(__dirname, 'src/assets/img')
+        "@c": path.join(__dirname, "src/components"),
+        "@css": path.join(__dirname, "src/assets/css"),
+        "@img": path.join(__dirname, "src/assets/img"),
       },
-      extensions: ['.js', '.vue', '.json']
-    }
-  }
+      extensions: [".js", ".vue", ".json"],
+    },
+  },
 };

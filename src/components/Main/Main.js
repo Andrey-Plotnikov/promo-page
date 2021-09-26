@@ -1,7 +1,7 @@
 export default {
   name: "AppMain",
   methods: {
-    openCardOrderModal: function() {
+    openCardOrderModal: function () {
       this.$parent.$refs.orderCardModal.isOpened = true;
     },
   },

@@ -1,8 +1,8 @@
-import Phone from '@c/Phone/Phone.vue';
+import Phone from "@c/Phone/Phone.vue";
 
 export default {
   name: "AppFooter",
   components: {
-    "phone": Phone,
+    phone: Phone,
   },
 };

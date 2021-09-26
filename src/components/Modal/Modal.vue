@@ -3,8 +3,12 @@
     <div class="modal-wrapper" v-show="isOpened">
       <div class="modal-content">
         <div class="modal-wrapper__header">
-          <h2 class="title">{{title}}</h2>
-          <a href="#" class="modal-wrapper__closer close" v-on:click="closeOpenCardModal"></a>
+          <h2 class="title">{{ title }}</h2>
+          <a
+            href="#"
+            class="modal-wrapper__closer close"
+            v-on:click="closeOpenCardModal"
+          ></a>
         </div>
         <slot></slot>
       </div>
